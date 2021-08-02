@@ -16,10 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include 
-from airfare_django.views import OC
+from django_air.views import OC, CCS2
+from user import views as user_view
+from django.contrib.auth import views as auth
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', include('django_air.urls')),
-    path('', OC), 
+    path('home/', include('django_air.urls')),
+    
+    path('', include('user.urls')),
+    path('login/', user_view.Login, name ='login'),
+    path('logout/', auth.LogoutView.as_view(template_name ='user/index.html'), name ='logout'),
+    path('register/', user_view.register, name ='register'),
+    #path('home1/', OC),
+    #path('CCS/', CCS2),
 ]

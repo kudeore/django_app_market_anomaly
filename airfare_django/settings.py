@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'airfare_django',
+    'crispy_forms',
+    'user.apps.UserConfig',
+    'django_air',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+EMAIL_HOST_USER= "deore.kunal614@gmail.com"
+
+EMAIL_HOST_PASSWORD = 'Ohm@12345'
